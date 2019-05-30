@@ -1,0 +1,13 @@
+table { margin: auto; }
+
+.filtersCampo
+	{
+		border: 1px solid #3f87a6;
+		padding: 20px;
+	}
+
+.padrao{ background-color: #CECECE }
+
+.sucesso{ background-color: #A1A1A1 }
+
+.mina{ background-color: #FA0202 }

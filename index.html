@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.custom.css" />
+		<link rel="stylesheet" href="css/toastr.css"/>
+		<link rel="stylesheet" href="css/campoMinado.css"/>
+	</head>
+	
+	<body>
+		
+		<div class="container-fluid">
+		
+			<div class="row">
+			
+				<div class="col-md-12">
+					<div class="col-md-12" style="background-color:#CECECE">
+						<label id="txtNumMinas" style="font-size: 30px; color:red; font-family: stencil">MINAS: 000</label>
+						<label style="font-size: 30px; color:red; font-family: stencil">&nbsp-&nbsp</label>						
+						<label id="txtNumclicks" style="font-size: 30px; color:red; font-family: stencil">CLICKS: 000</label>
+						<button id="btnConfigCampoMinado" type="button" style="float: right;" class="btn btn-default">
+							<span class="glyphicon glyphicon glyphicon-cog" aria-hidden="true"></span>
+						</button>
+					</div>
+				</div>
+			</div>
+			
+			<div id="tableContent" class="vert-offset-top-1">
+				
+			</div>
+			
+			<!-- Modal generica - Basta passar dados -->
+			<div id="myModal" class="modal fade" role="dialog">
+				<div class="modal-dialog">
+					<!-- Counteúdo-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" onclick="limpaModal();" class="close" data-dismiss="modal">&times;</button>
+							<h4 id="tituloModal" class="modal-title"></h4>
+						</div>
+						<div id="conteudoModal" class="modal-body"></div>
+						<div id="footerModal" class="modal-footer"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Scripts -->
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/toastr.js"></script>
+		<script src="js/helpers.js"></script>
+		<script src="js/campoMinadoEngine.js"></script>
+		
+		<script type="text/javascript">
+
+			$(function () {
+				campoMinado.init({	
+					elements:
+						{
+							divTable:		"#tableContent",
+							lblNumMinas:	"#txtNumMinas",
+							lblNumClicks:	"#txtNumclicks",
+							btnConfigCampoMinado:	"#btnConfigCampoMinado"
+						},
+					elementsModalConfig:
+						{
+							linhas:		"#txtQtdLinhasModalConfig",
+							colunas:	"#txtQtdColunasModalConfig",
+							minas:		"#txtQtdMinasModalConfig"
+						}
+					});
+
+				$(document).ready(function ()	{	campoMinado.initializeScreen();	});
+			});
+
+		</script>
+	</body>
+</html>
